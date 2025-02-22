@@ -5,14 +5,15 @@
  </head>
  <body>
 <h4>472043</h4>
-<button id="bt" onclick="
+<script>
+function create_elements() {
 const article = document.createElement('article');
-for (let i = 0; i < 1000; i++) {
-const div = document.createElement('div');
-div.id = 'i' + i;
 document.body.appendChild(article);
-article.appendChild(div);
-"
->Выполнить задание</button>
+for (let i=0; i<1000; i++) {
+document.querySelector('article').append( document.createElement('div', id=i));
+}
+}
+</script>
+<button id="bt" onclick='create_elements()'>Выполнить задание</button>
 </body>
 </html>
