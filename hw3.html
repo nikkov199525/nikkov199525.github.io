@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <title>Страница HTML5</title><meta charset="utf-8">
- </head>
- <body>
+<head>
+    <title>Страница HTML5</title>
+    <meta charset="utf-8">
+</head>
+<body>
 <h4>472043</h4>
 <script>
 function create_elements() {
-const article = document.createElement('article');
-document.body.appendChild(article);
-for (let i=0; i<1000; i++) {
-document.querySelector('article').append( document.createElement('div', id=i));
-}
+    const article = document.createElement('article');
+    document.body.appendChild(article);
+    for (let i = 0; i < 1000; i++) {
+        const div = document.createElement('div');
+        div.id = 'i' + i;
+        article.appendChild(div);
+    }
 }
 </script>
 <button id="bt" onclick='create_elements()'>Выполнить задание</button>
