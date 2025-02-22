@@ -10,9 +10,8 @@
 <script>
 function create_elements() {
     for (let i = 0; i < 1000; i++) {
-        const div = document.createElement('div');
+        document.querySelector('article').append( document.createElement('div', 
         div.id = 'i' + i;
-        article.appendChild(div);
     }
 }
 </script>
