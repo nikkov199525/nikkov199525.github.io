@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+</head>
+<body>
+    <h1>Реализация плейлиста на основе select</h1>
+        <p>На этой странице представлен плейлист, содержащий музыку из популярных и, по мнению автора, весьма неплохих игр.<br>
+    <h2>Плейлист</h1>
+    <select id="playlist">
+        <option value="music/track1.mp3">Ghostrunner - Main Theme</option>
+        <option value="music/track2.mp3">Cyberpunk 2077 OST - V</option>
+        <option value="music/track3.mp3">Mick Gordon - DOOM Eternal</option>
+        <option value="music/track4.mp3">Ночь-Вокзал-Сигарета (VLADIK BRUTAL OST)</option>
+        <option value="music/track5.mp3">Atomic Heart  Soundtrack</option>
+    </select>
+        <button id="playBTN">Проиграть</button>
+    <audio id="audioPlayer" controls>
+        <source id="audioSource" src="" type="audio/mpeg">
+    </audio>
+    <script>
+        const startplay = document.getElementById('playBTN');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioSource = document.getElementById('audioSource');
+        const playlist = document.getElementById('playlist');
+        startplay.addEventListener('click', () => {
+            const selectedTrack = playlist.value;
+            audioSource.src = selectedTrack;
+            audioPlayer.load();
+            audioPlayer.play();
+        });
+    </script>
+</body>
+</html>
