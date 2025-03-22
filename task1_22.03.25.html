@@ -1,0 +1,42 @@
+
+<html>
+<head>
+    <title>Задание 1</title>
+</head>
+<body>
+    <h4>472043</h4> <!-- Замените 123456 на ваш настоящий номер -->
+    <h1 id="result"></h1>
+
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        const url = window.location.href;
+        const questionMarkIndex = url.indexOf('?');
+
+        if (questionMarkIndex !== -1) {
+            const n = parseInt(url.slice(questionMarkIndex + 1), 10);
+            
+            if (!isNaN(n) && n >= 2) {
+                let count = 0;
+
+                for (let i = 2; i <= n; i++) {
+                    if (isPrime(i)) count++;
+                }
+
+                document.getElementById('result').textContent = 'Количество простых чисел между 2 и ' + n + ': ' + count;
+            } else {
+                // Выводим сообщение о некорректном числе
+                document.getElementById('result').textContent = 'Введите целое число';
+            }
+        }
+
+        }
+    </script>
+</body>
+</html>
