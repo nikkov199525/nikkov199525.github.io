@@ -20,14 +20,12 @@
     if (!isNaN(N) && N >= 2) {
         let primeCount = 0;
 
-        // Считаем количество простых чисел от 2 до N включительно
         for (let i = 2; i <= N; i++) {
             if (isPrime(i)) {
                 primeCount++;
             }
         }
 
-        // Устанавливаем заголовок окна
         document.title = primeCount.toString();
     } else {
         document.title = "Некорректное значение";
